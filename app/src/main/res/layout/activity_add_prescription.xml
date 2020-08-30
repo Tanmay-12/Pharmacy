@@ -16,6 +16,17 @@
         android:src="@android:color/holo_blue_dark"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/pres_image"
+        app:layout_constraintBottom_toBottomOf="@id/pres_image"
+        app:layout_constraintLeft_toLeftOf="@id/pres_image"
+        app:layout_constraintRight_toRightOf="@id/pres_image"
+        android:text="Tap to Add Prescription"
+        android:id="@+id/text_image1"
+        />
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

@@ -96,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
 
                 if(user != null){
                     String name = user.getDisplayName();
-                    Toast.makeText(MainActivity.this, name, Toast.LENGTH_SHORT).show();
                 }
                 else{
                     startActivityForResult(

@@ -19,12 +19,19 @@ import android.os.Environment;
 import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ProfileActivity extends AppCompatActivity {
 
@@ -34,12 +41,16 @@ public class ProfileActivity extends AppCompatActivity {
     int flag=0;
     private ImageView userImage;
     private ImageView idImage;
+    private TextView one,two;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
         userImage = findViewById(R.id.user_image);
         idImage = findViewById(R.id.user_id);
+        one = findViewById(R.id.text_image1);
+        two = findViewById(R.id.text_image2);
 
         idImage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -56,6 +67,11 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
     }
+
+    Retrofit retrofit = new Retrofit.Builder().baseUrl("https://www.postman.com/collections/")
+            .addConverterFactory(GsonConverterFactory.create())
+            .build();
+
 
     private void askPermission()
     {
@@ -88,6 +104,7 @@ public class ProfileActivity extends AppCompatActivity {
                 File f = new File(currentPhotoPath);
                 String url = Uri.fromFile(f).toString();
                 userImage.setImageURI(Uri.parse(url));
+                one.setVisibility(View.GONE);
             }
         }
         if(requestCode==CAMERA_REQUEST_CODE && flag==2)
@@ -96,6 +113,7 @@ public class ProfileActivity extends AppCompatActivity {
                 File f = new File(currentPhotoPath);
                 String url = Uri.fromFile(f).toString();
                 idImage.setImageURI(Uri.parse(url));
+                two.setVisibility(View.GONE);
             }
         }
     }

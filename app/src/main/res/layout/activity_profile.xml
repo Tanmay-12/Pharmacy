@@ -16,6 +16,18 @@
         android:src="@android:color/holo_blue_dark"
         />
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/user_image"
+        app:layout_constraintBottom_toBottomOf="@id/user_image"
+        app:layout_constraintLeft_toLeftOf="@id/user_image"
+        app:layout_constraintRight_toRightOf="@id/user_image"
+        android:text="Tap to Add Profile Image"
+        android:id="@+id/text_image1"
+        />
+
+
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -67,6 +79,18 @@
         android:id="@+id/user_id"
         android:src="@android:color/holo_blue_dark"
         />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="@id/user_id"
+        app:layout_constraintBottom_toBottomOf="@id/user_id"
+        app:layout_constraintLeft_toLeftOf="@id/user_id"
+        app:layout_constraintRight_toRightOf="@id/user_id"
+        android:text="Tap to Add ID"
+        android:id="@+id/text_image2"
+        />
+
 
     <Button
         android:layout_width="wrap_content"

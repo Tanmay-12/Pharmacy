@@ -9,7 +9,7 @@
         android:layout_height="wrap_content"
         app:lottie_autoPlay="true"
         android:id="@+id/anim"
-        app:lottie_loop="true"
+        app:lottie_loop="false"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
